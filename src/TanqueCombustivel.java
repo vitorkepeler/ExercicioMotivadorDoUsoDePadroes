@@ -4,10 +4,13 @@ public class TanqueCombustivel {
     private int capacidade;
     private int combustivelDisponivel;
 
-    public TanqueCombustivel(TipoCombustivel tipoCombustivel, int capacidade) {
+    private TipoCombustivel tipoTanque;
+
+    public TanqueCombustivel(TipoCombustivel tipoCombustivel, int capacidade, TipoCombustivel tipoTanque) {
         this.tipoCombustivel = tipoCombustivel;
         this.capacidade = capacidade;
         this.combustivelDisponivel = 0;
+        this.tipoTanque = tipoTanque;
     }
 
     public TipoCombustivel getTipoCombustivel() {
@@ -26,7 +29,7 @@ public class TanqueCombustivel {
     // for maior que a capacidade livre
     public boolean abastece(TipoCombustivel tipoCombustivel, int quantidade) {
         if (tipoCombustivel != this.tipoCombustivel) {
-            if (this.tipoCombustivel == TipoCombustivel.FLEX) {
+            if (this.tipoCombustivel == TipoCombustivel.FLEX && this.tipoTanque == TipoCombustivel.FLEX) {
                 if (!(tipoCombustivel == TipoCombustivel.GASOLINA || tipoCombustivel == TipoCombustivel.ALCOOL)) {
                     return false;
                 }
