@@ -57,7 +57,7 @@ public class TanqueCombustivel {
     @Override
     public String toString() {
         return "TanqueCombustivel [capacidade=" + capacidade + ", combustivelDisponivel=" + combustivelDisponivel
-                + ", tipoCombustivel=" + tipoCombustivel + "]";
+                + ", tipoCombustivel=" + tipoCombustivel + ", tipoTanque=" + tipoTanque +  "]";
     }
 
 }
